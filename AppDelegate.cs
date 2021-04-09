@@ -187,14 +187,14 @@ namespace SamplyGame.iOS
                             }
                             else
                             {
-                                //await Task.Run(async () => await GetJoints(prediction, (int)image.Size.Width, (int)image.Size.Height));
-                                //if (FinishedGettingJoints)
-                                //{
-                                //    FinishedGettingJoints = false;
-                                //    var width = (int)image.Size.Width; var height = (int)image.Size.Height;
-                                //    GetJoints(prediction, width, height);
-                                //    FinishedGettingJoints = true;
-                                //}
+                                await Task.Run(async () => await GetJoints(prediction, (int)image.Size.Width, (int)image.Size.Height));
+                                if (FinishedGettingJoints)
+                                {
+                                    FinishedGettingJoints = false;
+                                    var width = (int)image.Size.Width; var height = (int)image.Size.Height;
+                                    GetJoints(prediction, width, height);
+                                    FinishedGettingJoints = true;
+                                }
                             }
                         }
                     }
