@@ -187,7 +187,7 @@ namespace SamplyGame.iOS
                             }
                             else
                             {
-                                await Task.Run(async () => await GetJoints(prediction, (int)image.Size.Width, (int)image.Size.Height));
+                                //await Task.Run(async () => await GetJoints(prediction, (int)image.Size.Width, (int)image.Size.Height));
                                 if (FinishedGettingJoints)
                                 {
                                     FinishedGettingJoints = false;
@@ -198,48 +198,6 @@ namespace SamplyGame.iOS
                             }
                         }
                     }
-                //}
-                var width = (int)image.Size.Width; var height = (int)image.Size.Height;
-
-                if (prediction != null)
-                {
-                    Task.Run(() =>
-                    {
-                        if (FinishedGettingJoints)
-                        {
-                            FinishedGettingJoints = false;
-                            
-                            GetJoints(prediction, width, height);
-                            FinishedGettingJoints = true;
-                        }
-                    });
-                }
-
-
-
-                //if (joints != null)
-                //{
-
-                    //var nose = joints[0];
-
-                    //BeginInvokeOnMainThread(() =>
-                    //{
-                    //    //var oldFrame = ImageView1.Frame;
-                    //    ImageView1.Frame = new CGRect(View.Bounds.Right * 0.8, nose.Y + 100, View.Bounds.Width * 0.2, View.Bounds.Height * 0.3);
-                    //});
-                    //SamplyGame.Joints = joints;
-
-                    //joints = null;
-                //}
-                //if (SamplyGame.IsRestarting)
-                //{
-                //    SamplyGame.IsRestarting = false;
-                //    StopCamera();
-                //    Thread.Sleep(1000);
-                //    StartCamera();
-                //}
-
-                //image.Dispose();
             }
             catch (Exception ex)
             {
